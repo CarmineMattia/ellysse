@@ -1,0 +1,132 @@
+.tech-partners {
+    padding: 60px 0;
+    background-color: var(--color-bg-dark);
+    overflow: hidden;
+    position: relative;
+}
+
+.partners-marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.partners-track {
+    display: flex;
+    gap: 80px;
+    animation: scroll-rtl 40s linear infinite;
+    width: fit-content;
+}
+
+/* Right to Left scroll animation */
+@keyframes scroll-rtl {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-33.333%);
+        /* Move by 1/3 since we tripled the content */
+    }
+}
+
+.partner-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    min-width: 150px;
+    transition: transform 0.3s ease;
+}
+
+.partner-item:hover {
+    transform: translateY(-5px);
+}
+
+.partner-logo-wrapper {
+    width: 120px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.partner-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(200%);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.partner-item:hover .partner-logo {
+    opacity: 1;
+    filter: grayscale(0%) brightness(100%);
+}
+
+.partner-fallback {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.partner-item:hover .partner-fallback {
+    color: rgba(255, 255, 255, 1);
+    border-color: var(--color-primary);
+}
+
+.partner-name {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.partner-item:hover .partner-name {
+    color: rgba(255, 255, 255, 1);
+}
+
+/* Pause animation on hover */
+.partners-marquee:hover .partners-track {
+    animation-play-state: paused;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .partners-track {
+        gap: 60px;
+        animation-duration: 30s;
+        /* Faster on mobile for better readability */
+    }
+
+    .partner-item {
+        min-width: 120px;
+    }
+
+    .partner-logo-wrapper {
+        width: 100px;
+        height: 50px;
+    }
+
+    .partner-fallback {
+        width: 60px;
+        height: 60px;
+        font-size: 1rem;
+    }
+
+    .partner-name {
+        font-size: 0.8rem;
+    }
+}

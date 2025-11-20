@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Features from './components/Features';
 import DemoForm from './components/DemoForm';
 import AboutUs from './components/AboutUs';
+import TechPartners from './components/TechPartners';
 import Careers from './components/Careers';
 import Footer from './components/Footer';
 
@@ -163,6 +164,7 @@ function App() {
         <main>
           <Hero />
           <AboutUs />
+          <TechPartners />
           <Careers />
           <Features />
           <DemoForm />
