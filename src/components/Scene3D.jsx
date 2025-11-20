@@ -19,7 +19,7 @@ const AnimatedSphere = () => {
                 distort={0.5}
                 speed={2}
                 roughness={0.2}
-                metalness={0.8}
+                metalness={0.5}
             />
         </Sphere>
     );
@@ -29,9 +29,9 @@ const Scene3D = () => {
     return (
         <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex: 0 }}>
             <Canvas camera={{ position: [0, 0, 5] }}>
-                <ambientLight intensity={0.5} />
-                <pointLight position={[10, 10, 10]} intensity={1} />
-                <pointLight position={[-10, -10, -10]} color="#FF6B00" intensity={0.5} />
+                <ambientLight intensity={1.2} />
+                <pointLight position={[10, 10, 10]} intensity={1.5} />
+                <pointLight position={[-10, -10, -10]} color="#FF6B00" intensity={1.5} />
                 <AnimatedSphere />
                 <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
                 <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
