@@ -14,9 +14,10 @@ const Header = () => {
         <header className="header">
             <div className="container header-container">
                 <div className="logo-section">
-                    <img src="/assets/maps-logo.svg" alt="Maps Group" className="maps-logo" />
+                    <img src="/assets/maps-logo.png" alt="Maps Group" className="maps-logo" />
                     <div className="divider"></div>
                     <img src="/assets/Ellysse-logo.png" alt="Ellysse" className="ellysse-logo" />
+                    <span className="ellysse-text">Ellysse</span>
                 </div>
 
                 <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
