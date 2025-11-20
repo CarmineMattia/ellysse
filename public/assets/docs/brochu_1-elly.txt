@@ -1,0 +1,165 @@
+📄 Document 1: BROCHU_1.PDF
+Page 1
+CONVERSAZIONI SENZA CONFINI CLIENTI, AI E AGENTI IN PERFETTA SINERGIA Ellysse Contact People Company of MAPS GROUP SHARING KNOWLEDGE 
+
+
+
+
+Page 2
+PROFILO ANNO DI NASCITA: Gennaio 2002 SEDE LEGALE E OPERATIVA: Reggio Emilia CORE BUSINESS AI Customer Care multicanale con agenti umani, assistenti virtuali e servizi di addestramento Bot Trainer MISSION La nostra mission è rivoluzionare la comunicazione tra clienti e aziende attraverso soluzioni all'avanguardia di intelligenza artificiale. Creiamo sistemi di contact center, voicebot e chatbot progettati per offrire un'esperienza utente senza precedenti, migliorando l'efficienza operativa e la soddisfazione del cliente. Ellysse Contact People HTTP A provide conectung May occasionally produce intructions or blased contes Linted knowledge of world and events after 2021 Company of MAPS GROUP 2 
+
+
+
+
+
+Page 3
+AI e Machine Learning Dialogflow EVOLUZIONE NATURALE DEL CUSTOMER CARE IN CHIAVE AI Canali di accesso : Livechat , Telegram , Whatsapp , Messenger , Alexa , Telefono Interfaccia di gestione : API , Contatta , Dashboard , ACD Multicanale , Monitor real-time e reports , Flow Designer Applicazioni terze parti : CRM , OpenAI , API , Vertex AI , ERP , Microsoft Funzioni aggiuntive : Handover , BUP Bup , DB "Contatta" è la piattaforma avanzata per il customer care omnicanale, potenziata dall'AI. Unisce l'efficienza degli assistenti virtuali all'expertise degli agenti umani per un'esperienza fluida e personalizzata. Grazie a chatbot e voicebot basati su NL e LLM, supera i tradizionali IVR con interazioni guidate e contestualizzate. Supporta i principali canali di messaggistica (Live Chat, Whatsapp, Facebook Messenger, Telegram) e offre ACD omnicanale, integrazioni con CRM e app di terze parti, monitoraggio in tempo reale e report dettagliati per ottimizzare le performance. Ellysse Contact People Company of MAPS GROUP 3 
+
+
+
+
+
+Page 4
+OTTIMIZZIAMO LA CUSTOMER JOURNEY PER UNA ESPERIENZA EFFICACE ED EFFICIENTE Assistenti virtuali, interazioni automatiche e una comunicazione coesa tra i diversi canali sono essenziali per creare percorsi unici ed integrati per ogni settore di riferimento.  [Visual points listed in the diagram]
+
+
+NUMERI VERDI 
+
+TRACKING SPEDIZIONI 
+
+SERVIZIO CLIENTI 
+
+HELP DESK TECNICO 
+
+BOOKING E PRENOTAZIONI APPUNTAMENTI 
+
+NUMERI DI EMERGENZA 
+
+SERVIZI BANCARI 
+
+URP 
+
+SUPPORTO ONLINE Ellysse Contact People Company of MAPS GROUP 4 
+
+
+
+
+Page 5
+RISCRIVI LE REGOLE DEL CUSTOMER CARE Tecnologie omnicanale e soluzioni basate sull'intelligenza artificiale, progettate per plasmare esperienze clienti ottimali. 
+
+
+Chatbot NLU/LLMO 
+
+Human Agent Front-end 
+
+Whisper-bot e Script-bot 
+
+Monitor real-time di tutti i contatti 
+
+Call Me Back Omnicanale 
+
+Architettura On prem e Cloud 
+
+Voicebot/IVR 
+
+Unica interfaccia di gestione e configurazione 
+
+Report dettagliati di tutti i contatti vocali e digitali 
+
+Multitenant 
+
+ACD omnicanale 
+
+Classifica PRO 
+
+Integrazione con applicazioni esterne 
+
+WebRTC Agent 
+
+Canali di Omnicanalità: TELEGRAM , MESSENGER , TELEFONO , WHATSAPP , SMART SPEAKER , E-MAIL , LIVE CHAT Ellysse Contact People Company of MAPS GROUP 5 
+
+
+
+
+
+Page 6
+OLTRE L'IVR... VOICEBOT... PER CONVERSAZIONI SMART E ASSISTENZA AUTOMATIZZATA Voicebot è un assistente virtuale vocale che accoglie le chiamate, filtra le richieste e le indirizza rapidamente, riducendo i tempi di attesa e ottimizzando il lavoro degli agenti. FUNZIONALITÀ CHIAVE 
+
+
+
+Comprende le richieste e fornisce risposte automatizzate e personalizzate. 
+
+Si integra facilmente con CRM, piattaforme di ticketing e altre soluzioni aziendali. 
+
+In caso di richieste complesse può trasferire l'interazione all'agente, garantendo continuità di servizio. BENEFICI PER LA TUA AZIENDA 
+
+
+Efficienza operativa 
+
+Risposte rapide e disponibili h24 7/7 
+
+Gestione di grandi volumi di interazioni simultanee 3 ESEMPI DI APPLICAZIONI 
+
+
+Assistenza clienti 
+
+Supporto tecnico 
+
+Gestione prenotazioni Ellysse Contact People Company of MAPS GROUP 6 
+
+
+
+
+Page 7
+Ligh mode Updates Log out RAG & PLAY: POTENZIA LA TUA CONVERSAZIONE ATTENUA LE ALLUCINAZIONI E DEFINISCI IL CONFINE! La RAG (Retrieval-Augmented-Generation) è una tecnica di apprendimento automatico che consente ai modelli di intelligenza artificiale di adattarsi rapidamente a nuovi compiti o domini di conoscenza, senza dover essere riaddestrati da zero. L'implementazione della RAG all'interno della nostra piattaforma di Customer Interactions Omnicanale "Contatta" permette di ridurre i tempi associati all'addestramento e/o riaddestramento cosicché i nostri assistenti virtuali possano apprendere rapidamente nuove informazioni e adattarsi a nuovi contesti di conversazione, garantendo un servizio clienti sempre aggiornato e pertinente. Ellysse Contact People Company of MAPS GROUP 7 
+
+
+
+
+
+Page 8
+SINGERGIA VINCENTE TRA UMANO E VIRTUALE L'unione tra chatbot e operatori umani è il cuore di un customer care moderno, efficiente e reattivo. Le chatbot gestiscono le richieste degli utenti con velocità e precisione, ma il loro ruolo non si ferma qui: diventano veri e propri assistenti digitali per gli operatori, suggerendo risposte e guidando la conversazione in tempo reale. A loro volta, gli operatori possono contribuire all'evoluzione della chatbot, arricchendone l'addestramento con il proprio know how. SCRIPT BOT 
+
+
+
+
+
+L'AI assiste gli agenti umani durante le chiamate, fornendo script predefiniti, domande dinamiche e risposte pertinenti. 
+
+L'agente interroga e consulta la chatbot in tempo reale per garantire risposte precise e tempestive agli utenti. WHISPER BOT 
+
+
+L'AI analizza le chat in tempo reale e suggerisce all'operatore risposte pertinenti, che ha il compito di valutare queste opzioni e scegliere quella più adatta prima dell'invio all'utente. HANDOVER 
+
+
+L'interazione fluida tra assistenti virtuali e agenti assicura un'esperienza uniforme e di alta qualità su tutti i canali di contatto. 
+
+Gli agenti accedono immediatamente alle informazioni raccolte dall'AI, evitando ripetizioni e offrendo un supporto personalizzato ed efficace. Ellysse Contact People Company of MAPS GROUP 8 
+
+
+
+
+Page 9
+DAL DATO ALL'INSIGHT CLASSIFICAZIONE INTELLIGENTE DEI CONTATTI E ANALISI DEL SENTIMENT La classificazione avanzata delle conversazioni tramite AI organizza i dati in categorie e analizza ogni interazione per determinare il sentiment dell'utente (positivo, negativo o neutro) e valutare l'esito cioè verificare se la risposta ha effettivamente risolto il problema dell'utente. I dati ottenuti possono essere usati per addestrare l'assistente virtuale tramite RAG. INTEGRAZIONI STRATEGICHE PER UN CONTACT CENTER EFFICIENTE Un contact center di qualità dipende dalla capacità degli operatori di accedere facilmente alle informazioni necessarie per rispondere rapidamente e con precisione. Grazie all'integrazione di CRM e piattaforme di terze parti, tramite semplici Webservice, possiamo ottimizzare l'intero processo, migliorando la gestione delle informazioni, la soddisfazione del cliente e l'efficienza operativa. Ellysse Contact People Company of MAPS GROUP 9 
+
+
+
+
+
+Page 10
+CLOUD O ON PREMISES? LA TECNOLOGIA SU MISURA PER IL TUO BUSINESS Ellysse offre soluzioni innovative e altamente versatili, permettendo al cliente di scegliere liberamente tra Public Cloud, Private Cloud e On-Premises, senza compromettere funzionalità, controllo e produttività, e adattandosi alle specifiche esigenze di ogni business. Ellysse Contact People Company of MAPS GROUP 10 
+
+
+
+
+
+Page 11
+11 INTEROPERABILITÀ GARANTITA 
+
+
+Abbiamo certificato le nostre soluzioni di voicebot e contact center sulle tecnologie di centralino voip più diffuse tra cui Alcatel, Cisco, Nethesis, Kalliope Pbx... CON UNA VASTA GAMMA DI CENTRALINI TELEFONICI INTEGRIAMO I TOP PLAYER DELL’INTELLIGENZA ARTIFICIALE 
+
+Per realizzare servizi di customer care, contact center, chatbot e voicebot efficienti, ci avvaliamo delle migliori tecnologie di AI disponibili sul mercato come OpenAI, LLama, Anthropic, Vertex AI... 
+
+Page 12
+(No significant text extracted, mainly images/graphics and company name) Ellysse Contact People Company of MAPS GROUP

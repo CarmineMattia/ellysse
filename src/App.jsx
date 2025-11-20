@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, createContext } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Features from './components/Features';
@@ -7,8 +7,10 @@ import AboutUs from './components/AboutUs';
 import TechPartners from './components/TechPartners';
 import Careers from './components/Careers';
 import Footer from './components/Footer';
+import ChatWidget from './components/ChatWidget';
+import './App.css';
 
-export const LanguageContext = React.createContext();
+export const LanguageContext = createContext();
 
 function App() {
   const [language, setLanguage] = useState('IT');
@@ -170,6 +172,7 @@ function App() {
           <DemoForm />
         </main>
         <Footer />
+        <ChatWidget />
       </div>
     </LanguageContext.Provider>
   );
