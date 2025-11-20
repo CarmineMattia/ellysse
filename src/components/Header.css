@@ -1,0 +1,118 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.maps-logo {
+    height: 24px;
+}
+
+.ellysse-logo {
+    height: 32px;
+}
+
+.divider {
+    width: 1px;
+    height: 24px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-menu ul {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu a {
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--color-text-white);
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--color-primary);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.lang-switcher {
+    display: flex;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px;
+    border-radius: 20px;
+}
+
+.lang-switcher button {
+    background: transparent;
+    color: var(--color-text-gray);
+    padding: 4px 10px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.lang-switcher button.active {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    color: white;
+    font-size: 24px;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-bg-dark);
+        padding: 20px;
+        flex-direction: column;
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-menu.active {
+        transform: translateY(0);
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+}
