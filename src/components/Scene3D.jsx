@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Sphere, MeshDistortMaterial, Stars } from '@react-three/drei';
+import { OrbitControls, Sphere, MeshDistortMaterial, Stars, Environment } from '@react-three/drei';
 
 const AnimatedSphere = () => {
     const meshRef = useRef();
@@ -33,10 +33,13 @@ const AnimatedSphere = () => {
             <MeshDistortMaterial
                 color="#FF6B00"
                 attach="material"
-                distort={0.5}
+                distort={0.4}
                 speed={2}
-                roughness={0.2}
-                metalness={0.5}
+                roughness={0.1}
+                metalness={0.1}
+                clearcoat={1.0}
+                clearcoatRoughness={0.1}
+                envMapIntensity={1.5}
             />
         </Sphere>
     );
@@ -46,11 +49,12 @@ const Scene3D = () => {
     return (
         <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex: 0 }}>
             <Canvas camera={{ position: [0, 0, 5] }}>
-                <ambientLight intensity={1.2} />
+                <ambientLight intensity={0.8} />
                 <pointLight position={[10, 10, 10]} intensity={1.5} />
                 <pointLight position={[-10, -10, -10]} color="#FF6B00" intensity={1.5} />
                 <AnimatedSphere />
                 <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+                <Environment preset="studio" />
                 <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
             </Canvas>
         </div>
