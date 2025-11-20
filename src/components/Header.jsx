@@ -26,11 +26,27 @@ const Header = () => {
                         <li><a href="#about" onClick={() => setIsMenuOpen(false)}>{t.nav.about}</a></li>
                         <li><a href="#services" onClick={() => setIsMenuOpen(false)}>{t.nav.services}</a></li>
                         <li><a href="#contact" onClick={() => setIsMenuOpen(false)}>{t.nav.contact}</a></li>
+                        <li className="mobile-lang-selector">
+                            <div className="lang-switcher-mobile">
+                                <button
+                                    className={language === 'IT' ? 'active' : ''}
+                                    onClick={() => setLanguage('IT')}
+                                >IT</button>
+                                <button
+                                    className={language === 'EN' ? 'active' : ''}
+                                    onClick={() => setLanguage('EN')}
+                                >EN</button>
+                                <button
+                                    className={language === 'FR' ? 'active' : ''}
+                                    onClick={() => setLanguage('FR')}
+                                >FR</button>
+                            </div>
+                        </li>
                     </ul>
                 </nav>
 
                 <div className="header-actions">
-                    <div className="lang-switcher">
+                    <div className="lang-switcher lang-switcher-desktop">
                         <button
                             className={language === 'IT' ? 'active' : ''}
                             onClick={() => setLanguage('IT')}

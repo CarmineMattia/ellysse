@@ -4,6 +4,23 @@ import { OrbitControls, Sphere, MeshDistortMaterial, Stars } from '@react-three/
 
 const AnimatedSphere = () => {
     const meshRef = useRef();
+    const [scale, setScale] = React.useState(2.4);
+
+    React.useEffect(() => {
+        const updateScale = () => {
+            if (window.innerWidth <= 768) {
+                setScale(1.5); // Smaller on mobile
+            } else if (window.innerWidth <= 992) {
+                setScale(1.8); // Medium on tablet
+            } else {
+                setScale(2.4); // Full size on desktop
+            }
+        };
+
+        updateScale();
+        window.addEventListener('resize', updateScale);
+        return () => window.removeEventListener('resize', updateScale);
+    }, []);
 
     useFrame((state) => {
         const t = state.clock.getElapsedTime();
@@ -12,7 +29,7 @@ const AnimatedSphere = () => {
     });
 
     return (
-        <Sphere args={[1, 100, 200]} scale={2.4} ref={meshRef}>
+        <Sphere args={[1, 100, 200]} scale={scale} ref={meshRef}>
             <MeshDistortMaterial
                 color="#FF6B00"
                 attach="material"

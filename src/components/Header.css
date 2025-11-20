@@ -97,7 +97,48 @@
     font-size: 24px;
 }
 
+.mobile-lang-selector {
+    display: none;
+}
+
 @media (max-width: 768px) {
+    .lang-switcher-desktop {
+        display: none;
+    }
+
+    .mobile-lang-selector {
+        display: block;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .lang-switcher-mobile {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 4px;
+        border-radius: 16px;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .lang-switcher-mobile button {
+        background: transparent;
+        color: var(--color-text-gray);
+        padding: 6px 12px;
+        border-radius: 12px;
+        font-size: 13px;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+
+    .lang-switcher-mobile button.active {
+        background-color: var(--color-primary);
+        color: white;
+    }
+
     .nav-menu {
         position: fixed;
         top: 70px;

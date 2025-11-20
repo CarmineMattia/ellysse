@@ -3,7 +3,6 @@
     width: 350px;
     z-index: 10;
     pointer-events: none;
-    /* Floating animation */
     animation: float 6s ease-in-out infinite;
 }
 
@@ -93,7 +92,6 @@
     border-bottom-left-radius: 2px;
 }
 
-/* Animation */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -110,9 +108,29 @@
     animation: fadeInUp 0.5s ease-out forwards;
 }
 
-/* Responsive - Hide chat on mobile */
+/* Mobile: Show chat but position it much lower */
 @media (max-width: 992px) {
     .chat-interface {
-        display: none;
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        max-width: 300px;
+        margin: 150px auto 0;
+        animation: none;
+    }
+
+    .chat-container {
+        padding: 15px;
+    }
+
+    .chat-messages {
+        min-height: 150px;
+    }
+
+    .chat-bubble {
+        font-size: 0.85rem;
+        padding: 8px 12px;
     }
 }
