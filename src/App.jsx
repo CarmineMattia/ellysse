@@ -1,4 +1,5 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Features from './components/Features';
@@ -14,6 +15,15 @@ export const LanguageContext = createContext();
 
 function App() {
   const [language, setLanguage] = useState('IT');
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, []);
 
   const translations = {
     IT: {
@@ -162,17 +172,44 @@ function App() {
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t: translations[language] }}>
       <div className="app">
-        <Header />
+        <AnimatePresence>
+          {!isLoading && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              style={{ position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 1000 }}
+            >
+              <Header />
+            </motion.div>
+          )}
+        </AnimatePresence>
         <main>
-          <Hero />
-          <AboutUs />
-          <TechPartners />
-          <Careers />
-          <Features />
-          <DemoForm />
+          <Hero isLoading={isLoading} />
+          {!isLoading && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              <AboutUs />
+              <TechPartners />
+              <Careers />
+              <Features />
+              <DemoForm />
+            </motion.div>
+          )}
         </main>
-        <Footer />
-        <ChatWidget />
+        {!isLoading && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1 }}
+          >
+            <Footer />
+            <ChatWidget />
+          </motion.div>
+        )}
       </div>
     </LanguageContext.Provider>
   );
