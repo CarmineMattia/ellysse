@@ -1,5 +1,6 @@
 import React, { useState, createContext, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Features from './components/Features';
@@ -9,13 +10,46 @@ import TechPartners from './components/TechPartners';
 import Careers from './components/Careers';
 import Footer from './components/Footer';
 import ChatWidget from './components/ChatWidget';
+import ChatInterface from './components/ChatInterface';
 import './App.css';
 
 export const LanguageContext = createContext();
 
-function App() {
+const LandingPage = ({ isLoading }) => (
+  <>
+    <main>
+      <Hero isLoading={isLoading} />
+      {!isLoading && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+        >
+          <AboutUs />
+          <TechPartners />
+          <Careers />
+          <Features />
+          <DemoForm />
+        </motion.div>
+      )}
+    </main>
+    {!isLoading && (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 1 }}
+      >
+        <Footer />
+        <ChatWidget />
+      </motion.div>
+    )}
+  </>
+);
+
+const AppContent = () => {
   const [language, setLanguage] = useState('IT');
   const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
 
   useEffect(() => {
     // Simulate loading time
@@ -173,7 +207,7 @@ function App() {
     <LanguageContext.Provider value={{ language, setLanguage, t: translations[language] }}>
       <div className="app">
         <AnimatePresence>
-          {!isLoading && (
+          {!isLoading && location.pathname !== '/chat' && (
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -184,34 +218,21 @@ function App() {
             </motion.div>
           )}
         </AnimatePresence>
-        <main>
-          <Hero isLoading={isLoading} />
-          {!isLoading && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              <AboutUs />
-              <TechPartners />
-              <Careers />
-              <Features />
-              <DemoForm />
-            </motion.div>
-          )}
-        </main>
-        {!isLoading && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1 }}
-          >
-            <Footer />
-            <ChatWidget />
-          </motion.div>
-        )}
+
+        <Routes>
+          <Route path="/" element={<LandingPage isLoading={isLoading} />} />
+          <Route path="/chat" element={<ChatInterface />} />
+        </Routes>
       </div>
     </LanguageContext.Provider>
+  );
+};
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 
