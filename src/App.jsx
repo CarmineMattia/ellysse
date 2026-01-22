@@ -54,7 +54,7 @@ const AppContent = () => {
           { id: 3, type: 'user', text: 'Mi mostri le funzionalità omnichannel?', delay: 3000 },
           { id: 4, type: 'ai', text: 'Certamente! La nostra piattaforma unifica tutti i canali.', delay: 4500 }
         ],
-        inputPlaceholder: 'Dì a Ellysse cosa farà il tuo agente...',
+        inputPlaceholder: 'Chiedi cosa farà il tuo agente...',
         suggestions: [
           { label: 'Cos\'è Ellysse?', text: 'Cos\'è Ellysse?' },
           { label: 'Integrazione AI', text: 'Come funziona l\'integrazione AI?' },
