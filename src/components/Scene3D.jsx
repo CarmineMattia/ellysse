@@ -44,6 +44,8 @@ const AnimatedSphere = () => {
                     clearcoatRoughness={0.1}
                     radius={1}
                     envMapIntensity={2.5}
+                    transparent={true}
+                    opacity={0.8}
                 />
             </Sphere>
         </Float>

@@ -47,7 +47,7 @@ const AppContent = () => {
         success: 'Richiesta inviata con successo!'
       },
       chat: {
-        welcome: 'Chiedimi tutto su Ellysse',
+        welcome: 'Domande su Ellysse?',
         messages: [
           { id: 1, type: 'user', text: 'Vorrei prenotare una demo', delay: 500 },
           { id: 2, type: 'ai', text: 'Come posso aiutarti?', delay: 1500 },
@@ -132,7 +132,7 @@ const AppContent = () => {
         success: 'Request sent successfully!'
       },
       chat: {
-        welcome: 'Ask me anything about Ellysse',
+        welcome: 'Ask me about Ellysse',
         messages: [
           { id: 1, type: 'user', text: 'I need to book a demo', delay: 500 },
           { id: 2, type: 'ai', text: 'How can I help?', delay: 1500 },
@@ -217,7 +217,7 @@ const AppContent = () => {
         success: 'Demande envoyée avec succès !'
       },
       chat: {
-        welcome: 'Demandez-moi tout sur Ellysse',
+        welcome: 'Questions sur Ellysse ?',
         messages: [
           { id: 1, type: 'user', text: 'Je souhaite réserver une démo', delay: 500 },
           { id: 2, type: 'ai', text: 'Comment puis-je vous aider ?', delay: 1500 },
