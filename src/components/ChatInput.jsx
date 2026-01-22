@@ -4,13 +4,13 @@ import { FaArrowUp } from 'react-icons/fa';
 import { LanguageContext } from '../App';
 import './ChatInput.css';
 
-const ChatInput = ({ onSendMessage }) => {
+const ChatInput = ({ onSendMessage, disabled }) => {
     const [message, setMessage] = useState('');
     const { t } = useContext(LanguageContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (message.trim()) {
+        if (message.trim() && !disabled) {
             onSendMessage(message);
             setMessage('');
         }
@@ -35,12 +35,13 @@ const ChatInput = ({ onSendMessage }) => {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     onKeyDown={handleKeyDown}
-                    placeholder={t.chat?.inputPlaceholder || "Tell Ellysse what your agent should do..."}
+                    placeholder={t.chat?.inputPlaceholder || "Tell Ellysse what your agent will do..."}
                     className="chat-textarea"
                     rows={1}
+                    disabled={disabled}
                 />
                 <div className="chat-actions">
-                    <button type="submit" className="action-btn send-btn" disabled={!message.trim()}>
+                    <button type="submit" className="action-btn send-btn" disabled={!message.trim() || disabled}>
                         <FaArrowUp />
                     </button>
                 </div>

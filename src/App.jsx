@@ -54,7 +54,7 @@ const AppContent = () => {
           { id: 3, type: 'user', text: 'Mi mostri le funzionalità omnichannel?', delay: 3000 },
           { id: 4, type: 'ai', text: 'Certamente! La nostra piattaforma unifica tutti i canali.', delay: 4500 }
         ],
-        inputPlaceholder: 'Dì a Ellysse cosa dovrebbe fare il tuo agente...',
+        inputPlaceholder: 'Dì a Ellysse cosa farà il tuo agente...',
         suggestions: [
           { label: 'Cos\'è Ellysse?', text: 'Cos\'è Ellysse?' },
           { label: 'Integrazione AI', text: 'Come funziona l\'integrazione AI?' },
@@ -139,7 +139,7 @@ const AppContent = () => {
           { id: 3, type: 'user', text: 'Can you show me the omnichannel features?', delay: 3000 },
           { id: 4, type: 'ai', text: 'Absolutely! Our platform unifies all channels.', delay: 4500 }
         ],
-        inputPlaceholder: 'Tell Ellysse what your agent should do...',
+        inputPlaceholder: 'Tell Ellysse what your agent will do...',
         suggestions: [
           { label: 'What is Ellysse?', text: 'What is Ellysse?' },
           { label: 'AI Integration', text: 'How does the AI integration work?' },
@@ -224,7 +224,7 @@ const AppContent = () => {
           { id: 3, type: 'user', text: 'Pouvez-vous me montrer les fonctionnalités omnicanales ?', delay: 3000 },
           { id: 4, type: 'ai', text: 'Absolument ! Notre plateforme unifie tous les canaux.', delay: 4500 }
         ],
-        inputPlaceholder: 'Dites à Ellysse ce que votre agent doit faire...',
+        inputPlaceholder: 'Dites à Ellysse ce que fera votre agent...',
         suggestions: [
           { label: 'Qu\'est-ce qu\'Ellysse ?', text: 'Qu\'est-ce qu\'Ellysse ?' },
           { label: 'Intégration IA', text: 'Comment fonctionne l\'intégration de l\'IA ?' },

@@ -5,7 +5,9 @@ import ChatSidebar from './ChatSidebar';
 import ChatInput from './ChatInput';
 import ChatMessage from './ChatMessage';
 import TechPartners from './TechPartners';
+import TypingIndicator from './TypingIndicator';
 import { LanguageContext } from '../App';
+import { FaRobot } from 'react-icons/fa';
 import './ChatInterface.css';
 
 import { AnimatePresence, motion } from 'framer-motion';
@@ -14,6 +16,7 @@ const ChatInterface = ({ isLanding = false, isLoading = false }) => {
     const { messages, sendMessage, clearMessages } = useChat();
     const chatContentRef = useRef(null);
     const { t } = useContext(LanguageContext);
+    const [isTyping, setIsTyping] = useState(false);
 
     const scrollToBottom = () => {
         if (chatContentRef.current) {
@@ -23,14 +26,18 @@ const ChatInterface = ({ isLanding = false, isLoading = false }) => {
 
     useEffect(() => {
         scrollToBottom();
-    }, [messages]);
+    }, [messages, isTyping]);
 
     const handleNewChat = () => {
         clearMessages();
     };
 
     const handleSendMessage = async (text) => {
-        await sendMessage(text, t);
+        setIsTyping(true);
+        // Simulate a minimum typing delay for better UX if the response is too fast
+        const minDelay = new Promise(resolve => setTimeout(resolve, 1500));
+        await Promise.all([sendMessage(text, t), minDelay]);
+        setIsTyping(false);
     };
 
     return (
@@ -95,6 +102,20 @@ const ChatInterface = ({ isLanding = false, isLoading = false }) => {
                                     {messages.map(msg => (
                                         <ChatMessage key={msg.id} message={msg} />
                                     ))}
+                                    {isTyping && (
+                                        <motion.div
+                                            className="chat-message ai-message"
+                                            initial={{ opacity: 0, y: 10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                        >
+                                            <div className="message-avatar">
+                                                <FaRobot />
+                                            </div>
+                                            <div className="message-bubble">
+                                                <TypingIndicator />
+                                            </div>
+                                        </motion.div>
+                                    )}
                                 </div>
                             )}
                         </div>
@@ -106,12 +127,13 @@ const ChatInterface = ({ isLanding = false, isLoading = false }) => {
                                             key={index}
                                             className={`suggestion-btn ${index === 2 ? 'suggestion-btn-cool' : ''}`}
                                             onClick={() => handleSendMessage(suggestion.text, t)}
+                                            disabled={isTyping}
                                         >
                                             {suggestion.label}
                                         </button>
                                     ))}
                                 </div>
-                                <ChatInput onSendMessage={handleSendMessage} />
+                                <ChatInput onSendMessage={handleSendMessage} disabled={isTyping} />
                             </div>
                             {!isLanding && <TechPartners />}
                         </div>
