@@ -18,6 +18,17 @@ const ChatMessage = ({ message }) => {
             </div>
             <div className="message-bubble">
                 {message.text}
+                {message.video && (
+                    <div className="message-video-container" style={{ marginTop: '10px', maxWidth: '100%', borderRadius: '8px', overflow: 'hidden' }}>
+                        <video
+                            src={message.video}
+                            controls
+                            autoPlay
+                            muted
+                            style={{ width: '100%', display: 'block' }}
+                        />
+                    </div>
+                )}
             </div>
         </motion.div>
     );

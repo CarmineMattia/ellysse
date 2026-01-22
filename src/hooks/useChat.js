@@ -65,8 +65,19 @@ export const useChat = (initialMessages = []) => {
                 await new Promise(resolve => setTimeout(resolve, 1000));
 
                 // Randomly select a scenario
-                const scenarios = ['local', 'meta', 'oracle'];
+                const scenarios = ['local', 'meta', 'oracle', 'video'];
                 const selectedScenario = scenarios[Math.floor(Math.random() * scenarios.length)];
+
+                if (selectedScenario === 'video') {
+                    setMessages(prev => [...prev, {
+                        id: Date.now() + 1,
+                        type: 'ai',
+                        text: "Ecco chi sono veramente...",
+                        video: '/videos/ellysse.mp4'
+                    }]);
+                    setIsTyping(false);
+                    return;
+                }
 
                 const introText = scenariosData[selectedScenario].intro;
 
@@ -75,6 +86,21 @@ export const useChat = (initialMessages = []) => {
                     id: Date.now() + 1,
                     type: 'ai',
                     text: introText
+                }]);
+                setIsTyping(false);
+                return;
+            }
+
+            // Handle direct video request (Easter Egg)
+            const lowerText = text.toLowerCase();
+            if ((lowerText.includes('chi sei') || lowerText.includes('video') || lowerText.includes('mostrami')) &&
+                (lowerText.includes('ellysse') || lowerText.includes('tua faccia') || lowerText.includes('chi sei'))) {
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                setMessages(prev => [...prev, {
+                    id: Date.now() + 1,
+                    type: 'ai',
+                    text: "Piacere di conoscerti!",
+                    video: '/videos/ellysse.mp4'
                 }]);
                 setIsTyping(false);
                 return;
