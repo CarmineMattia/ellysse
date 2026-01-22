@@ -16,6 +16,7 @@
     gap: 80px;
     animation: scroll-rtl 60s linear infinite;
     width: fit-content;
+    margin-top: 40px;
 }
 
 /* Right to Left scroll animation */

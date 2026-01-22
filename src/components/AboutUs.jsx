@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { LanguageContext } from '../App';
 import './AboutUs.css';
+import ellysseAiImage from '../assets/ellysse_ai_concept.png';
 
 const AboutUs = () => {
     const { t } = useContext(LanguageContext);
@@ -18,7 +19,7 @@ const AboutUs = () => {
                     </p>
                 </div>
                 <div className="about-image">
-                    <img src="/src/assets/ellysse_ai_concept.png" alt="Ellysse AI" className="about-img" />
+                    <img src={ellysseAiImage} alt="Ellysse AI" className="about-img" />
                 </div>
             </div>
         </section>
