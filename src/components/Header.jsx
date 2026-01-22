@@ -1,12 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { LanguageContext } from '../App';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import './Header.css'; // We'll create this or use inline styles/modules. Let's use a separate CSS file for cleaner separation if needed, or just styled-components/modules. For simplicity with vanilla CSS, I'll add styles to index.css or a specific file. Let's use inline/module or just standard CSS classes defined in index.css or a new Header.css.
-// Actually, for a small project, I'll put component styles in the component file or a dedicated CSS. Let's create Header.css next.
+import { FlagIT, FlagEN, FlagFR } from './Flags';
+import './Header.css';
 
 const Header = () => {
     const { language, setLanguage, t } = useContext(LanguageContext);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -31,35 +32,65 @@ const Header = () => {
                                 <button
                                     className={language === 'IT' ? 'active' : ''}
                                     onClick={() => setLanguage('IT')}
-                                >IT</button>
+                                    aria-label="Italiano"
+                                >
+                                    <FlagIT className="flag-icon-mobile" />
+                                </button>
                                 <button
                                     className={language === 'EN' ? 'active' : ''}
                                     onClick={() => setLanguage('EN')}
-                                >EN</button>
+                                    aria-label="English"
+                                >
+                                    <FlagEN className="flag-icon-mobile" />
+                                </button>
                                 <button
                                     className={language === 'FR' ? 'active' : ''}
                                     onClick={() => setLanguage('FR')}
-                                >FR</button>
+                                    aria-label="Français"
+                                >
+                                    <FlagFR className="flag-icon-mobile" />
+                                </button>
                             </div>
                         </li>
                     </ul>
                 </nav>
 
                 <div className="header-actions">
-                    <div className="lang-switcher lang-switcher-desktop">
+                    <div className="lang-dropdown-container">
                         <button
-                            className={language === 'IT' ? 'active' : ''}
-                            onClick={() => setLanguage('IT')}
-                        >IT</button>
-                        <button
-                            className={language === 'EN' ? 'active' : ''}
-                            onClick={() => setLanguage('EN')}
-                        >EN</button>
-                        <button
-                            className={language === 'FR' ? 'active' : ''}
-                            onClick={() => setLanguage('FR')}
-                        >FR</button>
+                            className="lang-dropdown-trigger"
+                            onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+                            aria-label="Select Language"
+                        >
+                            {language === 'IT' && <FlagIT className="flag-icon" />}
+                            {language === 'EN' && <FlagEN className="flag-icon" />}
+                            {language === 'FR' && <FlagFR className="flag-icon" />}
+                        </button>
+
+                        {isLangDropdownOpen && (
+                            <div className="lang-dropdown-menu">
+                                <button
+                                    className={`lang-option ${language === 'IT' ? 'active' : ''}`}
+                                    onClick={() => { setLanguage('IT'); setIsLangDropdownOpen(false); }}
+                                >
+                                    <FlagIT className="flag-icon" /> <span>IT</span>
+                                </button>
+                                <button
+                                    className={`lang-option ${language === 'EN' ? 'active' : ''}`}
+                                    onClick={() => { setLanguage('EN'); setIsLangDropdownOpen(false); }}
+                                >
+                                    <FlagEN className="flag-icon" /> <span>EN</span>
+                                </button>
+                                <button
+                                    className={`lang-option ${language === 'FR' ? 'active' : ''}`}
+                                    onClick={() => { setLanguage('FR'); setIsLangDropdownOpen(false); }}
+                                >
+                                    <FlagFR className="flag-icon" /> <span>FR</span>
+                                </button>
+                            </div>
+                        )}
                     </div>
+
                     <button className="mobile-menu-btn" onClick={toggleMenu}>
                         {isMenuOpen ? <FaTimes /> : <FaBars />}
                     </button>

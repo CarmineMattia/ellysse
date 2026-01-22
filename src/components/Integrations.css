@@ -1,0 +1,106 @@
+.integrations {
+    padding: 120px 0;
+}
+
+.integrations .section-title {
+    color: #000000 !important;
+    background: none !important;
+    -webkit-text-fill-color: #000000 !important;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    text-align: center;
+    /* Ensure title is centered */
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.integrations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.integration-card {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 20px;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.integration-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-primary);
+}
+
+.integration-icon-wrapper {
+    font-size: 60px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.integration-card:hover .integration-icon-wrapper {
+    color: var(--color-primary);
+    transform: scale(1.1);
+}
+
+.integration-name {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .integrations {
+        padding: 60px 0;
+    }
+
+    .integrations .section-title {
+        font-size: 2rem;
+        padding: 0 20px;
+    }
+
+    .section-subtitle {
+        padding: 0 20px;
+        font-size: 1rem;
+    }
+
+    .integrations-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+        margin-top: 40px;
+        padding: 0 15px;
+    }
+
+    .integration-card {
+        padding: 20px 15px;
+    }
+
+    .integration-icon-wrapper {
+        font-size: 36px;
+    }
+
+    .integration-name {
+        font-size: 0.9rem;
+    }
+}

@@ -91,3 +91,26 @@
 .footer-bottom a {
     color: var(--color-text-white);
 }
+.phone-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.phone-link svg {
+    font-size: 1rem;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-link svg {
+    font-size: 1rem;
+}
+
+.rotated-phone {
+    transform: rotate(90deg);
+}

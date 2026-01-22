@@ -11,7 +11,7 @@ const Features = () => {
     return (
         <section className="features section-padding" id="services">
             <div className="container">
-                <h2 className="section-title text-gradient">{t.features.title}</h2>
+                <h2 className="section-title">{t.features.title}</h2>
                 <div className="features-grid">
                     {t.features.items.map((item, index) => (
                         <div className="feature-card" key={index}>

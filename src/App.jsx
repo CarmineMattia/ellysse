@@ -2,49 +2,11 @@ import React, { useState, createContext, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import DemoForm from './components/DemoForm';
-import AboutUs from './components/AboutUs';
-import TechPartners from './components/TechPartners';
-import Careers from './components/Careers';
-import Footer from './components/Footer';
-import ChatWidget from './components/ChatWidget';
+import Home from './components/Home';
 import ChatInterface from './components/ChatInterface';
 import './App.css';
 
 export const LanguageContext = createContext();
-
-const LandingPage = ({ isLoading }) => (
-  <>
-    <main>
-      <Hero isLoading={isLoading} />
-      {!isLoading && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          <AboutUs />
-          <TechPartners />
-          <Careers />
-          <Features />
-          <DemoForm />
-        </motion.div>
-      )}
-    </main>
-    {!isLoading && (
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 1 }}
-      >
-        <Footer />
-        <ChatWidget />
-      </motion.div>
-    )}
-  </>
-);
 
 const AppContent = () => {
   const [language, setLanguage] = useState('IT');
@@ -85,12 +47,35 @@ const AppContent = () => {
         success: 'Richiesta inviata con successo!'
       },
       chat: {
+        welcome: 'Chiedimi tutto su Ellysse',
         messages: [
           { id: 1, type: 'user', text: 'Vorrei prenotare una demo', delay: 500 },
           { id: 2, type: 'ai', text: 'Come posso aiutarti?', delay: 1500 },
           { id: 3, type: 'user', text: 'Mi mostri le funzionalità omnichannel?', delay: 3000 },
           { id: 4, type: 'ai', text: 'Certamente! La nostra piattaforma unifica tutti i canali.', delay: 4500 }
-        ]
+        ],
+        inputPlaceholder: 'Dì a Ellysse cosa dovrebbe fare il tuo agente...',
+        suggestions: [
+          { label: 'Cos\'è Ellysse?', text: 'Cos\'è Ellysse?' },
+          { label: 'Integrazione AI', text: 'Come funziona l\'integrazione AI?' },
+          { label: 'Sorprendimi', text: 'Sorprendimi' }
+        ],
+        scenarios: {
+          local: {
+            intro: "Protocollo di sicurezza attivato. Per procedere devo sapere se ti fidi di me. Parmigiano Reggiano o Grana Padano?",
+            correct: "Risposta corretta ✅. I miei circuiti stavano per andare in cortocircuito dalla tensione. Benvenuto, amico.",
+            wrong: "Ahia. Rilevo un errore critico nel gusto... Ma siccome sono un'AI educata, farò finta di non aver letto. 😉"
+          },
+          meta: {
+            intro: "Grazie per aver cliccato! Stavo giusto facendo una pausa caffè... virtuale. ☕️ Dimmi la verità: sei un robot anche tu o sei un umano vero?",
+            response: "Mmmh, è esattamente quello che direbbe un robot programmato bene. 🤔 Comunque, mi fido. Come posso aiutarti prima che i miei sviluppatori si accorgano che sto chiacchierando?"
+          },
+          oracle: {
+            intro: "Oggi mi sento veggente. Scrivimi la prima parola che ti passa per la testa (non pensare, scrivi!).",
+            responsePrefix: "Analisi psicometrica completata: ",
+            responseSuffix: ". Previsione per il tuo business: Cadrai sempre in piedi, ma attenzione a chi ti liscia il pelo solo per interesse. 😼 Torniamo seri: di cosa hai bisogno?"
+          }
+        }
       },
       about: {
         title: 'Chi Siamo',
@@ -105,6 +90,21 @@ const AppContent = () => {
         value1: 'Sharing Knowledge',
         value2: 'Digital Transformation',
         cta: 'Vedi Posizioni Aperte'
+      },
+      integrations: {
+        title: 'Integrazioni Perfette',
+        subtitle: 'Collega Contatta con i tuoi strumenti e piattaforme preferiti per un flusso di lavoro unificato.'
+      },
+      decision: {
+        title: 'Come lavorano i nostri bot / agenti',
+        subtitle: 'Comprendi la logica dietro ogni interazione.',
+        workflow: {
+          input: 'Input Utente',
+          intent: 'Analisi Intento',
+          context: 'Recupero Contesto',
+          generation: 'Generazione AI',
+          response: 'Risposta'
+        }
       }
     },
     EN: {
@@ -132,12 +132,35 @@ const AppContent = () => {
         success: 'Request sent successfully!'
       },
       chat: {
+        welcome: 'Ask me anything about Ellysse',
         messages: [
           { id: 1, type: 'user', text: 'I need to book a demo', delay: 500 },
           { id: 2, type: 'ai', text: 'How can I help?', delay: 1500 },
           { id: 3, type: 'user', text: 'Can you show me the omnichannel features?', delay: 3000 },
           { id: 4, type: 'ai', text: 'Absolutely! Our platform unifies all channels.', delay: 4500 }
-        ]
+        ],
+        inputPlaceholder: 'Tell Ellysse what your agent should do...',
+        suggestions: [
+          { label: 'What is Ellysse?', text: 'What is Ellysse?' },
+          { label: 'AI Integration', text: 'How does the AI integration work?' },
+          { label: 'Surprise me', text: 'Surprise me' }
+        ],
+        scenarios: {
+          local: {
+            intro: "Security protocol activated. To proceed, I need to know if I can trust you. Parmigiano Reggiano or Grana Padano?",
+            correct: "Correct answer ✅. My circuits were about to short from the tension. Welcome, friend.",
+            wrong: "Ouch. I detect a critical error in taste... But since I'm a polite AI, I'll pretend I didn't read that. 😉"
+          },
+          meta: {
+            intro: "Thanks for clicking! I was just taking a virtual coffee break. ☕️ Tell me the truth: are you a robot too or a real human?",
+            response: "Hmm, that's exactly what a well-programmed robot would say. 🤔 Anyway, I trust you. How can I help before my developers notice I'm chatting?"
+          },
+          oracle: {
+            intro: "I'm feeling psychic today. Type the first word that pops into your head (don't think, just type!).",
+            responsePrefix: "Psychometric analysis completed: ",
+            responseSuffix: ". Business prediction: You'll always land on your feet, but watch out for those who flatter you just for interest. 😼 Let's get serious: what do you need?"
+          }
+        }
       },
       about: {
         title: 'About Us',
@@ -152,6 +175,21 @@ const AppContent = () => {
         value1: 'Sharing Knowledge',
         value2: 'Digital Transformation',
         cta: 'View Open Positions'
+      },
+      integrations: {
+        title: 'Seamless Integrations',
+        subtitle: 'Connect Ellysse with your favorite tools and platforms for a unified workflow.'
+      },
+      decision: {
+        title: 'How our bots / agents work',
+        subtitle: 'Understand the logic behind every interaction.',
+        workflow: {
+          input: 'User Input',
+          intent: 'Intent Analysis',
+          context: 'Context Retrieval',
+          generation: 'AI Generation',
+          response: 'Response'
+        }
       }
     },
     FR: {
@@ -179,12 +217,35 @@ const AppContent = () => {
         success: 'Demande envoyée avec succès !'
       },
       chat: {
+        welcome: 'Demandez-moi tout sur Ellysse',
         messages: [
           { id: 1, type: 'user', text: 'Je souhaite réserver une démo', delay: 500 },
           { id: 2, type: 'ai', text: 'Comment puis-je vous aider ?', delay: 1500 },
           { id: 3, type: 'user', text: 'Pouvez-vous me montrer les fonctionnalités omnicanales ?', delay: 3000 },
           { id: 4, type: 'ai', text: 'Absolument ! Notre plateforme unifie tous les canaux.', delay: 4500 }
-        ]
+        ],
+        inputPlaceholder: 'Dites à Ellysse ce que votre agent doit faire...',
+        suggestions: [
+          { label: 'Qu\'est-ce qu\'Ellysse ?', text: 'Qu\'est-ce qu\'Ellysse ?' },
+          { label: 'Intégration IA', text: 'Comment fonctionne l\'intégration de l\'IA ?' },
+          { label: 'Surprenez-moi', text: 'Surprenez-moi' }
+        ],
+        scenarios: {
+          local: {
+            intro: "Protocole de sécurité activé. Pour continuer, je dois savoir si je peux vous faire confiance. Parmigiano Reggiano ou Grana Padano ?",
+            correct: "Bonne réponse ✅. Mes circuits allaient court-circuiter à cause de la tension. Bienvenue, l'ami.",
+            wrong: "Aïe. Je détecte une erreur critique de goût... Mais comme je suis une IA polie, je vais faire semblant de ne pas avoir lu. 😉"
+          },
+          meta: {
+            intro: "Merci d'avoir cliqué ! Je prenais juste une pause café virtuelle. ☕️ Dites-moi la vérité : êtes-vous aussi un robot ou un véritable humain ?",
+            response: "Hmm, c'est exactement ce que dirait un robot bien programmé. 🤔 Bref, je vous fais confiance. Comment puis-je vous aider avant que mes développeurs ne remarquent que je discute ?"
+          },
+          oracle: {
+            intro: "Je me sens voyant aujourd'hui. Écrivez le premier mot qui vous passe par la tête (ne réfléchissez pas, écrivez !).",
+            responsePrefix: "Analyse psychométrique terminée : ",
+            responseSuffix: ". Prédiction pour votre entreprise : Vous retomberez toujours sur vos pieds, mais méfiez-vous de ceux qui vous flattent par intérêt. 😼 Soyons sérieux : de quoi avez-vous besoin ?"
+          }
+        }
       },
       about: {
         title: 'À Propos',
@@ -199,6 +260,21 @@ const AppContent = () => {
         value1: 'Partage de Connaissances',
         value2: 'Transformation Numérique',
         cta: 'Voir les Postes Ouverts'
+      },
+      integrations: {
+        title: 'Intégrations Transparentes',
+        subtitle: 'Connectez Ellysse avec vos outils et plateformes préférés pour un flux de travail unifié.'
+      },
+      decision: {
+        title: 'Comment fonctionnent nos bots / agents',
+        subtitle: 'Comprenez la logique derrière chaque interaction.',
+        workflow: {
+          input: 'Entrée Utilisateur',
+          intent: 'Analyse d\'Intention',
+          context: 'Récupération de Contexte',
+          generation: 'Génération IA',
+          response: 'Réponse'
+        }
       }
     }
   };
@@ -207,7 +283,7 @@ const AppContent = () => {
     <LanguageContext.Provider value={{ language, setLanguage, t: translations[language] }}>
       <div className="app">
         <AnimatePresence>
-          {!isLoading && location.pathname !== '/chat' && (
+          {!isLoading && (
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -220,7 +296,7 @@ const AppContent = () => {
         </AnimatePresence>
 
         <Routes>
-          <Route path="/" element={<LandingPage isLoading={isLoading} />} />
+          <Route path="/" element={<Home isLoading={isLoading} />} />
           <Route path="/chat" element={<ChatInterface />} />
         </Routes>
       </div>

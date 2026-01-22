@@ -18,7 +18,7 @@ const AboutUs = () => {
                     </p>
                 </div>
                 <div className="about-image">
-                    <img src="/assets/about-elly.jpeg" alt="Ellysse AI" className="about-img" />
+                    <img src="/src/assets/ellysse_ai_concept.png" alt="Ellysse AI" className="about-img" />
                 </div>
             </div>
         </section>

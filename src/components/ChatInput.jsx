@@ -1,16 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { motion } from 'framer-motion';
-import { FaPaperclip, FaArrowUp } from 'react-icons/fa';
+import { FaArrowUp } from 'react-icons/fa';
+import { LanguageContext } from '../App';
 import './ChatInput.css';
 
-const ChatInput = () => {
+const ChatInput = ({ onSendMessage }) => {
     const [message, setMessage] = useState('');
+    const { t } = useContext(LanguageContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (message.trim()) {
-            console.log('Sending:', message);
+            onSendMessage(message);
             setMessage('');
+        }
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            handleSubmit(e);
         }
     };
 
@@ -25,14 +34,12 @@ const ChatInput = () => {
                 <textarea
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Tell Ellysse what your agent should do..."
+                    onKeyDown={handleKeyDown}
+                    placeholder={t.chat?.inputPlaceholder || "Tell Ellysse what your agent should do..."}
                     className="chat-textarea"
                     rows={1}
                 />
                 <div className="chat-actions">
-                    <button type="button" className="action-btn attach-btn">
-                        <FaPaperclip />
-                    </button>
                     <button type="submit" className="action-btn send-btn" disabled={!message.trim()}>
                         <FaArrowUp />
                     </button>

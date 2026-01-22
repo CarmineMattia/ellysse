@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { LanguageContext } from '../App';
-import { FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { FaLinkedin, FaYoutube, FaPhone, FaEnvelope } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -31,6 +31,32 @@ const Footer = () => {
                             <li><a href="#about">{t.nav.about}</a></li>
                             <li><a href="#services">{t.nav.services}</a></li>
                             <li><a href="#contact">{t.nav.contact}</a></li>
+                        </ul>
+                    </div>
+
+                    <div className="footer-col">
+                        <h4>Contatti</h4>
+                        <ul>
+                            <li>
+                                <a href="tel:+390522232699" className="contact-link">
+                                    <FaPhone className="rotated-phone" /> +39 0522 232699
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+390521052300" className="contact-link">
+                                    <FaPhone className="rotated-phone" /> +39 0521 052300
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:info@mapsgroup.it" className="contact-link">
+                                    <FaEnvelope /> Email: info@mapsgroup.it
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:mapsspa@actaliscertymail.it" className="contact-link">
+                                    <FaEnvelope /> Pec: mapsspa@actaliscertymail.it
+                                </a>
+                            </li>
                         </ul>
                     </div>
 

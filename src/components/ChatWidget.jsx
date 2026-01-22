@@ -1,27 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaCommentDots, FaTimes, FaPaperPlane, FaRobot } from 'react-icons/fa';
 import './ChatWidget.css';
-import { loadContext } from '../utils/loadContext';
-import { getAIResponse } from '../services/ai';
+import { useChat } from '../hooks/useChat';
 
 const ChatWidget = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [messages, setMessages] = useState([
-        { id: 1, type: 'ai', text: 'Ciao! Sono l\'assistente virtuale di Ellysse. Come posso aiutarti oggi?' }
-    ]);
     const [inputValue, setInputValue] = useState('');
-    const [isTyping, setIsTyping] = useState(false);
-    const [context, setContext] = useState('');
     const messagesEndRef = useRef(null);
 
-    useEffect(() => {
-        // Load context when component mounts
-        const fetchContext = async () => {
-            const text = await loadContext();
-            setContext(text);
-        };
-        fetchContext();
-    }, []);
+    const { messages, isTyping, sendMessage } = useChat([
+        { id: 1, type: 'ai', text: 'Ciao! Sono l\'assistente virtuale di Ellysse. Come posso aiutarti oggi?' }
+    ]);
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -35,34 +24,9 @@ const ChatWidget = () => {
         e.preventDefault();
         if (!inputValue.trim()) return;
 
-        const userText = inputValue.trim();
-        const userMessage = { id: Date.now(), type: 'user', text: userText };
-
-        setMessages(prev => [...prev, userMessage]);
-        setInputValue('');
-        setIsTyping(true);
-
-        try {
-            // Get AI response
-            const aiResponseText = await getAIResponse([...messages, userMessage], context);
-
-            const aiMessage = {
-                id: Date.now() + 1,
-                type: 'ai',
-                text: aiResponseText
-            };
-            setMessages(prev => [...prev, aiMessage]);
-        } catch (error) {
-            console.error("Error getting response:", error);
-            const errorMessage = {
-                id: Date.now() + 1,
-                type: 'ai',
-                text: "Mi dispiace, ho riscontrato un problema. Riprova più tardi."
-            };
-            setMessages(prev => [...prev, errorMessage]);
-        } finally {
-            setIsTyping(false);
-        }
+        const text = inputValue;
+        setInputValue(''); // Clear input immediately
+        await sendMessage(text);
     };
 
     return (

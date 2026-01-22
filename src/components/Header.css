@@ -67,27 +67,97 @@
     gap: 20px;
 }
 
-.lang-switcher {
-    display: flex;
-    gap: 5px;
+/* Language Dropdown */
+.lang-dropdown-container {
+    position: relative;
+}
+
+.lang-dropdown-trigger {
     background: rgba(255, 255, 255, 0.1);
-    padding: 4px;
-    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
 }
 
-.lang-switcher button {
+.lang-dropdown-trigger:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.lang-dropdown-menu {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 120px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     background: transparent;
+    border: none;
     color: var(--color-text-gray);
-    padding: 4px 10px;
-    border-radius: 16px;
-    font-size: 12px;
-    font-weight: 600;
-    transition: all 0.3s;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
 }
 
-.lang-switcher button.active {
-    background-color: var(--color-primary);
+.lang-option:hover {
+    background: rgba(255, 255, 255, 0.1);
     color: white;
+}
+
+.lang-option.active {
+    background: var(--color-primary);
+    color: white;
+}
+
+.flag-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.lang-dropdown-trigger .flag-icon {
+    width: 24px;
+    height: 24px;
 }
 
 .mobile-menu-btn {
@@ -127,16 +197,25 @@
     .lang-switcher-mobile button {
         background: transparent;
         color: var(--color-text-gray);
-        padding: 6px 12px;
-        border-radius: 12px;
-        font-size: 13px;
-        font-weight: 600;
+        padding: 8px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         transition: all 0.3s;
     }
 
     .lang-switcher-mobile button.active {
         background-color: var(--color-primary);
         color: white;
+        transform: scale(1.1);
+    }
+
+    .flag-icon-mobile {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .nav-menu {

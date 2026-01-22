@@ -1,6 +1,6 @@
 .careers {
     padding: 80px 0;
-    background-color: var(--color-bg-dark);
+    /* background-color: var(--color-bg-dark); */
     display: flex;
     justify-content: center;
 }

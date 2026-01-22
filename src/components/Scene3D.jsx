@@ -45,7 +45,7 @@ const AnimatedSphere = () => {
     );
 };
 
-const Scene3D = () => {
+const Scene3D = ({ enableControls = true }) => {
     return (
         <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex: 0 }}>
             <Canvas camera={{ position: [0, 0, 5] }}>
@@ -55,7 +55,8 @@ const Scene3D = () => {
                 <AnimatedSphere />
                 <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
                 <Environment preset="studio" />
-                <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
+                {enableControls && <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />}
+                {!enableControls && <OrbitControls enableZoom={false} enableRotate={false} autoRotate autoRotateSpeed={0.5} />}
             </Canvas>
         </div>
     );
