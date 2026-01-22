@@ -98,7 +98,9 @@
 
     .chat-textarea {
         font-size: 1.1rem;
-        min-height: 28px;
+        min-height: 44px;
+        line-height: 1.5;
+        padding: 10px 0;
     }
 
     .action-btn {
