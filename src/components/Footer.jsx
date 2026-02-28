@@ -11,15 +11,15 @@ const Footer = () => {
             <div className="container">
                 <div className="footer-grid">
                     <div className="footer-col">
-                        <img src="/assets/Ellysse-logo.png" alt="Ellysse" className="footer-logo" />
+                        <img src="/assets/Elly-logo.png" alt="Elly" className="footer-logo" />
                         <p className="footer-desc">
-                            Ellysse srl<br />
+                            Elly srl<br />
                             Via Danubio, 19<br />
                             42124 Reggio Emilia (RE)<br />
                             Italy
                         </p>
                         <div className="social-links">
-                            <a href="https://www.linkedin.com/company/ellysse/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+                            <a href="https://www.linkedin.com/company/elly/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
                             <a href="https://www.youtube.com/channel/UC_pspvd4-_d2WAXWXzFP81w" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
                         </div>
                     </div>
@@ -48,13 +48,13 @@ const Footer = () => {
                                 </a>
                             </li>
                             <li>
-                                <a href="mailto:info@mapsgroup.it" className="contact-link">
-                                    <FaEnvelope /> Email: info@mapsgroup.it
+                                <a href="mailto:info@elly.ai" className="contact-link">
+                                    <FaEnvelope /> Email: info@elly.ai
                                 </a>
                             </li>
                             <li>
-                                <a href="mailto:mapsspa@actaliscertymail.it" className="contact-link">
-                                    <FaEnvelope /> Pec: mapsspa@actaliscertymail.it
+                                <a href="mailto:elly@pec.it" className="contact-link">
+                                    <FaEnvelope /> Pec: elly@pec.it
                                 </a>
                             </li>
                         </ul>
@@ -73,7 +73,7 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-bottom">
-                    <p>&copy; {new Date().getFullYear()} Ellysse srl. Part of <a href="https://mapsgroup.it" target="_blank" rel="noopener noreferrer">Maps Group</a>.</p>
+                    <p>&copy; {new Date().getFullYear()} Elly srl.</p>
                 </div>
             </div>
         </footer>

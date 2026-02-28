@@ -15,10 +15,8 @@ const Header = () => {
         <header className="header">
             <div className="container header-container">
                 <div className="logo-section">
-                    <img src="/assets/maps-logo.png" alt="Maps Group" className="maps-logo" />
-                    <div className="divider"></div>
-                    <img src="/assets/Ellysse-logo.png" alt="Ellysse" className="ellysse-logo" />
-                    <span className="ellysse-text">Ellysse</span>
+                    <img src="/assets/Elly-logo.png" alt="Elly" className="elly-logo" />
+                    <span className="elly-text">Elly</span>
                 </div>
 
                 <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>

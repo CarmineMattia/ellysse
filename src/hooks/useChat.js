@@ -73,7 +73,7 @@ export const useChat = (initialMessages = []) => {
                         id: Date.now() + 1,
                         type: 'ai',
                         text: "Ecco chi sono veramente...",
-                        video: '/videos/ellysse.mp4'
+                        video: '/videos/elly.mp4'
                     }]);
                     setIsTyping(false);
                     return;
@@ -94,13 +94,13 @@ export const useChat = (initialMessages = []) => {
             // Handle direct video request (Easter Egg)
             const lowerText = text.toLowerCase();
             if ((lowerText.includes('chi sei') || lowerText.includes('video') || lowerText.includes('mostrami')) &&
-                (lowerText.includes('ellysse') || lowerText.includes('tua faccia') || lowerText.includes('chi sei'))) {
+                (lowerText.includes('elly') || lowerText.includes('tua faccia') || lowerText.includes('chi sei'))) {
                 await new Promise(resolve => setTimeout(resolve, 1000));
                 setMessages(prev => [...prev, {
                     id: Date.now() + 1,
                     type: 'ai',
                     text: "Piacere di conoscerti!",
-                    video: '/videos/ellysse.mp4'
+                    video: '/videos/elly.mp4'
                 }]);
                 setIsTyping(false);
                 return;

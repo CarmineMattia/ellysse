@@ -1,11 +1,11 @@
-# 🚀 Ellysse AI - Landing Page 
-https://ellysse.netlify.app/
+# 🚀 Elly AI - Landing Page 
+https://elly.netlify.app/
 
 > **Nota**: Questo progetto è stato creato puramente per divertimento e sperimentazione! 🎨✨
 
 ## 📖 Descrizione
 
-Una landing page moderna e accattivante per **Ellysse AI**, l'unità specializzata in AI & Omnichannel di **Maps Group**. Il sito presenta un design premium con animazioni 3D, effetti glassmorphism e un'interfaccia chat animata che mostra le capacità omnichannel della piattaforma.
+Una landing page moderna e accattivante per **Elly AI**. Il sito presenta un design premium con animazioni 3D, effetti glassmorphism e un'interfaccia chat animata che mostra le capacità omnichannel della piattaforma.
 
 ## ✨ Caratteristiche Principali
 
@@ -47,8 +47,7 @@ Supporto completo per **3 lingue**:
 
 1. **Clona il repository**
    ```bash
-   git clone https://github.com/CarmineMattia/ellysse.git
-   cd ellysse
+   npm install
    ```
 
 2. **Installa le dipendenze**
@@ -102,7 +101,7 @@ I file ottimizzati saranno generati nella cartella `dist/`.
 ### Colori
 I colori principali sono definiti in `src/index.css`:
 ```css
---color-primary: #FF6B00;      /* Arancione Ellysse */
+--color-primary: #FF6B00;      /* Arancione Elly */
 --color-bg-dark: #0a0a0a;      /* Sfondo scuro */
 --color-text-white: #ffffff;   /* Testo bianco */
 --color-text-gray: #b0b0b0;    /* Testo grigio */
@@ -139,7 +138,6 @@ Questo progetto è stato creato come esperimento per esplorare:
 ## 🎉 Crediti
 
 - **Design & Development**: Progetto sperimentale
-- **Ispirazione**: Ellysse AI - Maps Group
 - **Scopo**: Puro divertimento e apprendimento! 🚀
 
 ## 📄 Licenza
